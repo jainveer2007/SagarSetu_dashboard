@@ -89,7 +89,7 @@ export default function ChatPanel({ marineData }) {
       <div className="chat-panel__messages" ref={scrollRef}>
         {messages.map((m) => (
           <div key={m.id} className={`chat-msg chat-msg--${m.role}`}>
-            {m.role === 'assistant' && <div className="chat-msg__avatar"></div>}
+            
             <div className="chat-msg__bubble">
               <p>{m.text}</p>
               <span className="chat-msg__time">{m.time}</span>
@@ -131,7 +131,7 @@ export default function ChatPanel({ marineData }) {
               animationSpeed={4}
               showBorder={false}
             >
-              Ask ORCA anything...
+              Ask SETU anything...
             </GradientText>
           )}
           <input

@@ -1,13 +1,13 @@
 // Static mock data. Swap for real endpoints later.
 
 export const CHAT_HISTORY = [
-  // { id: 'c1', title: 'Is it safe to fish tomorrow near Mumbai?', time: '09:40 AM', active: true },
-  // { id: 'c2', title: 'Best fishing zones this week', time: 'Yesterday' },
-  // { id: 'c3', title: 'Wave height forecast, Alibag coast', time: 'Yesterday' },
-  // { id: 'c4', title: 'Cyclone alert status, Konkan coast', time: '2 days ago' },
-  // { id: 'c5', title: 'Tide timing for early morning trip', time: '3 days ago' },
-  // { id: 'c6', title: 'Wind conditions near Ratnagiri', time: '5 days ago' },
-  // { id: 'c7', title: 'Comparing PFZ 1 vs PFZ 2', time: 'Last week' },
+  { id: 'c1', title: 'Is it safe to fish tomorrow near Mumbai?', time: '09:40 AM', active: true },
+  { id: 'c2', title: 'Best fishing zones this week', time: 'Yesterday' },
+  { id: 'c3', title: 'Wave height forecast, Alibag coast', time: 'Yesterday' },
+  { id: 'c4', title: 'Cyclone alert status, Konkan coast', time: '2 days ago' },
+  { id: 'c5', title: 'Tide timing for early morning trip', time: '3 days ago' },
+  { id: 'c6', title: 'Wind conditions near Ratnagiri', time: '5 days ago' },
+  { id: 'c7', title: 'Comparing PFZ 1 vs PFZ 2', time: 'Last week' },
 ]
 
 export const QUICK_PROMPTS = [
