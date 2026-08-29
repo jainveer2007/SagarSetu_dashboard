@@ -17,13 +17,7 @@ export const QUICK_PROMPTS = [
   'Alerts',
 ]
 
-export const INITIAL_MESSAGES = [
-  {
-    id: 'm1',
-    role: 'assistant',
-    text: "",
-  },
-]
+export const INITIAL_MESSAGES = []
 
 export const TIDE_POINTS = [
   { label: 'L', time: '06:15 AM', value: 0.7 },
