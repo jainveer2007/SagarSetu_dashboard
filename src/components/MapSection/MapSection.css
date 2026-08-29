@@ -1,0 +1,107 @@
+.map-section {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 380px;
+}
+
+.map-section__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.map-section__title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.map-section__subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.map-section__badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--status-good);
+  background: var(--status-good-bg);
+  border: 1px solid rgba(61, 220, 132, 0.25);
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.map-section__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--status-good);
+}
+
+.map-section__dot--pulse {
+  background: var(--status-moderate);
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.map-section__map-wrap {
+  position: relative;
+  flex: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+}
+
+.map-section__map {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+}
+
+.map-section__legend {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 500;
+  background: rgba(10, 15, 22, 0.85);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  backdrop-filter: blur(4px);
+  width: 150px;
+}
+
+.map-section__legend-title {
+  display: block;
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.map-section__legend-bar {
+  height: 6px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #2563eb, #22c55e, #f2b84b, #f0563f);
+  margin-bottom: 4px;
+}
+
+.map-section__legend-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--text-muted);
+}
