@@ -4,6 +4,7 @@ import MapSection from './components/MapSection/MapSection'
 import TopicCardsGrid from './components/TopicCards/TopicCardsGrid'
 import ChatPanel from './components/ChatPanel/ChatPanel'
 import ClickSpark from './components/ui/ClickSpark'
+import SplashCursor from './components/ui/SplashCursor'
 import { useMarineData } from './data/useMarineData'
 import './App.css'
 
@@ -22,6 +23,17 @@ export default function App() {
       sparkCount={8}
       duration={400}
     >
+      <SplashCursor
+        DENSITY_DISSIPATION={0.5}
+        VELOCITY_DISSIPATION={1}
+        PRESSURE={0.05}
+        CURL={1}
+        SPLAT_RADIUS={0.04}
+        SPLAT_FORCE={1000}
+        COLOR_UPDATE_SPEED={4}
+        COLOR="#111e33"
+        RAINBOW_MODE={false}
+      />
       <div className="app">
         <Sidebar />
 
