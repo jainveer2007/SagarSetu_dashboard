@@ -13,6 +13,24 @@
   flex-direction: column;
   gap: 12px;
   min-height: 190px;
+  /* Hover animation base — transform/shadow only, no layout shift */
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  cursor: default;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topic-card {
+    transition: box-shadow 0.25s ease-out;
+  }
+  .topic-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .topic-card__header {

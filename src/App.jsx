@@ -3,6 +3,7 @@ import TopBar from './components/TopBar/TopBar'
 import MapSection from './components/MapSection/MapSection'
 import TopicCardsGrid from './components/TopicCards/TopicCardsGrid'
 import ChatPanel from './components/ChatPanel/ChatPanel'
+import ClickSpark from './components/ui/ClickSpark'
 import { useMarineData } from './data/useMarineData'
 import './App.css'
 
@@ -14,24 +15,32 @@ export default function App() {
   const { data: marineData, loading } = useMarineData(COORDS[0], COORDS[1])
 
   return (
-    <div className="app">
-      <Sidebar />
+    <ClickSpark
+      sparkColor="#fff"
+      sparkSize={10}
+      sparkRadius={15}
+      sparkCount={8}
+      duration={400}
+    >
+      <div className="app">
+        <Sidebar />
 
-      <div className="app__main">
-        <TopBar location={LOCATION} marineData={marineData} loading={loading} />
+        <div className="app__main">
+          <TopBar location={LOCATION} marineData={marineData} loading={loading} />
 
-        <div className="app__content">
-          <MapSection
-            location={LOCATION}
-            coords={COORDS}
-            marineData={marineData}
-            loading={loading}
-          />
-          <TopicCardsGrid marineData={marineData} loading={loading} />
+          <div className="app__content">
+            <MapSection
+              location={LOCATION}
+              coords={COORDS}
+              marineData={marineData}
+              loading={loading}
+            />
+            <TopicCardsGrid marineData={marineData} loading={loading} />
+          </div>
         </div>
-      </div>
 
-      <ChatPanel marineData={marineData} />
-    </div>
+        <ChatPanel marineData={marineData} />
+      </div>
+    </ClickSpark>
   )
 }
