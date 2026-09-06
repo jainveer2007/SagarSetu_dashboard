@@ -144,12 +144,6 @@
   border-top: 1px solid var(--border-soft);
 }
 
-.chat-panel__input-row:focus-within {
-  box-shadow: 0 0 0 1px rgba(53, 201, 232, 0.35), 0 0 18px rgba(53, 201, 232, 0.25);
-  border-radius: 999px;
-  transition: box-shadow 0.2s ease;
-}
-
 .chat-panel__input-wrap {
   position: relative;
   flex: 1;
@@ -167,6 +161,14 @@
   position: relative;
   z-index: 1;
   outline: none;
+  box-shadow: none;
+}
+
+.chat-panel__input:focus,
+.chat-panel__input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--border);
 }
 
 .chat-panel__input-placeholder {

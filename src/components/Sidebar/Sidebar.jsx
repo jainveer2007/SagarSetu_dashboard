@@ -8,7 +8,7 @@ export default function Sidebar() {
       <div className="sidebar__brand">
         <div className="sidebar__logo">🐋</div>
         <div>
-          <div className="sidebar__brand-name">SAGAR SETU</div>
+          <div className="sidebar__brand-name">EPSILON 6</div>
           <div className="sidebar__brand-sub"></div>
         </div>
       </div>
