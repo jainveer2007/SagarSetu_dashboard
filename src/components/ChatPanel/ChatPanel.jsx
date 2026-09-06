@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { INITIAL_MESSAGES, QUICK_PROMPTS } from '../../data/mockData'
 import ShinyText from './ShinyText'
 import GradientText from './GradientText'
+import GhostCursor from '../ui/GhostCursor'
 import './ChatPanel.css'
 
 function timeNow() {
@@ -71,6 +72,20 @@ export default function ChatPanel({ marineData }) {
 
   return (
     <aside className="chat-panel">
+      <GhostCursor
+        color="#B497CF"
+        brightness={0.3}
+        edgeIntensity={0}
+        trailLength={10}
+        inertia={0.04}
+        grainIntensity={0.02}
+        bloomStrength={0.05}
+        bloomRadius={0.4}
+        bloomThreshold={0.05}
+        fadeDelayMs={1000}
+        fadeDurationMs={1500}
+        zIndex={0}
+      />
       <div className="chat-panel__header">
         <div className="chat-panel__title-row">
           <span className="chat-panel__whale">🐋</span>

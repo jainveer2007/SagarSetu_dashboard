@@ -50,10 +50,10 @@ export default function Sidebar() {
       </nav>
 
       <div className="sidebar__footer">
-        <div className="sidebar__avatar">S</div>
+        <div className="sidebar__avatar">E</div>
         <div>
-          <div className="sidebar__footer-name">Skipper 7</div>
-          <div className="sidebar__footer-plan">Premium Plan</div>
+          <div className="sidebar__footer-name">EPSILON 6</div>
+          <div className="sidebar__footer-plan"></div>
         </div>
       </div>
     </aside>

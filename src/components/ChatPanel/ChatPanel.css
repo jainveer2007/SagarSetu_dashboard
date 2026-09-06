@@ -6,6 +6,8 @@
   border-left: 1px solid var(--border-soft);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .chat-panel__header {
