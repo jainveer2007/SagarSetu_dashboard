@@ -9,24 +9,21 @@ import './GhostCursor.css';
 const GhostCursor = ({
   className,
   style,
-  trailLength = 10,
-  inertia = 0.04,
-  grainIntensity = 0.02,
-  bloomStrength = 0.05,
-  bloomRadius = 0.4,
-  bloomThreshold = 0.05,
-
-  brightness = 0.3,
+  trailLength = 60,          // was 50 — longer trail
+  inertia = 0.6,              // was 0.5 — more glide/drift
+  grainIntensity = 0.05,
+  bloomStrength = 0.5,        // was 0.1 — noticeably stronger glow
+  bloomRadius = 1.2,          // was 1.0 — glow spreads further
+  bloomThreshold = 0.0,       // was 0.025 — more pixels contribute to bloom
+  brightness = 1.4,           // was 1 — brighter core color
   color = '#B497CF',
   mixBlendMode = 'screen',
   edgeIntensity = 0,
-
   maxDevicePixelRatio = 0.5,
   targetPixels,
-
   fadeDelayMs,
-  fadeDurationMs,
-  zIndex = 0
+  fadeDurationMs = 2200,      // slightly longer glowing fade-out
+  zIndex = 10
 }) => {
   const containerRef = useRef(null);
   const rendererRef = useRef(null);
@@ -42,7 +39,7 @@ const GhostCursor = ({
   const resizeObsRef = useRef(null);
   const currentMouseRef = useRef(new THREE.Vector2(0.5, 0.5));
   const velocityRef = useRef(new THREE.Vector2(0, 0));
-  const fadeOpacityRef = useRef(0.0);
+  const fadeOpacityRef = useRef(1.0);
   const lastMoveTimeRef = useRef(typeof performance !== 'undefined' ? performance.now() : Date.now());
   const pointerActiveRef = useRef(false);
   const runningRef = useRef(false);
@@ -103,7 +100,7 @@ const GhostCursor = ({
       vec2 r = vec2(fbm(p * iScale + q * 1.5 + iTime * 0.15), fbm(p * iScale + q * 1.5 + vec2(8.3,2.8) + iTime * 0.15));
 
       float smoke = fbm(p * iScale + r * 0.8);
-      float radius = 0.05 + 0.03 * (1.0 / iScale);
+      float radius = 0.5 + 0.3 * (1.0 / iScale);
       float distFactor = 1.0 - smoothstep(0.0, radius * activity, length(p - mousePos));
       float alpha = pow(smoke, 2.5) * distFactor;
 
@@ -264,7 +261,7 @@ const GhostCursor = ({
         iResolution: { value: new THREE.Vector3(1, 1, 1) },
         iMouse: { value: new THREE.Vector2(0.5, 0.5) },
         iPrevMouse: { value: trailBufRef.current.map(v => v.clone()) },
-        iOpacity: { value: 0.0 },
+        iOpacity: { value: 1.0 },
         iScale: { value: 1.0 },
         iBaseColor: { value: new THREE.Vector3(baseColor.r, baseColor.g, baseColor.b) },
         iBrightness: { value: brightness },
@@ -415,13 +412,11 @@ const GhostCursor = ({
       const y = THREE.MathUtils.clamp(1 - (e.clientY - rect.top) / Math.max(1, rect.height), 0, 1);
       currentMouseRef.current.set(x, y);
       pointerActiveRef.current = true;
-      fadeOpacityRef.current = 1.0;
       lastMoveTimeRef.current = performance.now();
       ensureLoop();
     };
     const onPointerEnter = () => {
       pointerActiveRef.current = true;
-      fadeOpacityRef.current = 1.0;
       ensureLoop();
     };
     const onPointerLeave = () => {
