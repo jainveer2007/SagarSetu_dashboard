@@ -1,4 +1,4 @@
-# ORCA Dashboard
+# SETU Dashboard
 
 React + Vite dashboard for the ORCA marine AI assistant.
 
