@@ -90,14 +90,14 @@ export default function ChatPanel({ marineData }) {
         <div className="chat-panel__title-row">
           <span className="chat-panel__whale">🐋</span>
           <ShinyText
-            text="ORCA AI Assistant"
+            text="SETU"
             className="chat-panel__title"
             color="#a7b3c4"
             shineColor="#35c9e8"
             speed={2.5}
             spread={100}
           />
-          <span className="chat-panel__beta">SETU</span>
+          <span className="chat-panel__beta"></span>
         </div>
       </div>
 
