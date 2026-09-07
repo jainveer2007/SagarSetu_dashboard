@@ -97,7 +97,7 @@ export default function ChatPanel({ marineData }) {
             speed={2.5}
             spread={100}
           />
-          <span className="chat-panel__beta"></span>
+          <span className="chat-panel__beta">SETU</span>
         </div>
       </div>
 
@@ -140,14 +140,15 @@ export default function ChatPanel({ marineData }) {
       >
         <div className="chat-panel__input-wrap">
           {input.length === 0 && (
-            <GradientText
-              className="chat-panel__input-placeholder"
-              colors={['#35c9e8', '#1fd1a8', '#35c9e8']}
-              animationSpeed={4}
-              showBorder={false}
-            >
-              Ask SETU anything...
-            </GradientText>
+            <ShinyText
+            text="Ask SETU anything..."
+            className="chat-panel__input-placeholder"
+            color="#35c9e8"
+            shineColor="#ffffff"
+            speed={2.5}
+            spread={100}
+          />
+
           )}
           <input
             className="chat-panel__input"
